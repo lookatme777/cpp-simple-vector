@@ -10,7 +10,6 @@ public:
     ArrayPtr() = default;
 
     // Создаёт в куче массив из size элементов типа Type.
-    // Если size == 0, поле raw_ptr_ должно быть равно nullptr
     explicit ArrayPtr(size_t size) {
         if (size == 0) {
             raw_ptr_ = nullptr;
@@ -24,7 +23,6 @@ public:
     // Конструктор из сырого указателя, хранящего адрес массива в куче либо nullptr
     explicit ArrayPtr(Type* raw_ptr) noexcept {
         raw_ptr_ = raw_ptr;
-        // Реализуйте конструктор самостоятельно
     }
 
     // Запрещаем копирование
